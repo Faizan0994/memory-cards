@@ -1,4 +1,9 @@
 :root {
+    font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue",
+        sans-serif;
+    color: #333333;
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -10,9 +15,13 @@
     margin: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
 @font-face {
     font-family: quicksand;
-    src: url("./assets/quicksand.woff");
+    src: url("./assets/quicksand.ttf");
 }
 
 body {
