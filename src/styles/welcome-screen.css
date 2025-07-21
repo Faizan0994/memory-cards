@@ -1,0 +1,62 @@
+.welcome {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade {
+    opacity: 0;
+}
+
+.welcome h1 {
+    font-size: 8vw;
+    font-weight: 700;
+}
+
+.game-info {
+    font-weight: 400;
+    padding: 0 4vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    font-size: 4.5vw;
+    color: #333333;
+}
+
+.game-info button {
+    border-radius: 5vw;
+    border: none;
+    width: 25vw;
+    height: 10vw;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 5vw;
+    font-weight: 500;
+    margin-top: 3vw;
+}
+
+@media screen and (orientation: landscape) {
+    .welcome h1 {
+        font-size: 4vw;
+    }
+
+    .game-info {
+        padding: 0 20vw;
+        font-size: 2vw;
+    }
+
+    .game-info button {
+        width: 12vw;
+        height: 5vw;
+        font-size: 2.5vw;
+        margin-top: 2vh;
+        border-radius: 3vw;
+    }
+}
