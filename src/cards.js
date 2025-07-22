@@ -20,26 +20,32 @@ function getRandomElements(array, count) {
     return shuffled.slice(0, count);
 }
 
-const allium = new Card("allium", "./assets/flowers/allium.jpg");
-const alstromeria = new Card("alstromeria", "./assets/flowers/alstromeria.jpg");
-const aster = new Card("aster", "./assets/flowers/aster.jpg");
-const azalea = new Card("azalea", "./assets/flowers/azalea.jpg");
-const carnation = new Card("carnation", "./assets/flowers/carnation.jpg");
-const daffodil = new Card("daffodil", "./assets/flowers/daffodil.jpg");
-const daisy = new Card("daisy", "./assets/flowers/daisy.jpg");
-const gardenia = new Card("gardenia", "./assets/flowers/gardenia.jpg");
-const iris = new Card("iris", "./assets/flowers/iris.jpg");
-const jasmine = new Card("jasmine", "./assets/flowers/jasmine.jpg");
-const lavender = new Card("lavender", "./assets/flowers/lavender.jpg");
-const lily = new Card("lily", "./assets/flowers/lily.jpg");
-const marigold = new Card("marigold", "./assets/flowers/marigold.jpg");
-const orchid = new Card("orchid", "./assets/flowers/orchid.jpg");
-const peony = new Card("peony", "./assets/flowers/peony.jpg");
-const poppy = new Card("poppy", "./assets/flowers/poppy.jpg");
-const rose = new Card("rose", "./assets/flowers/rose.jpg");
-const snapdragon = new Card("snapdragon", "./assets/flowers/snapdragon.jpg");
-const sunflower = new Card("sunflower", "./assets/flowers/sunflower.jpg");
-const tulip = new Card("tulip", "./assets/flowers/tulip.jpg");
+const allium = new Card("allium", "./src/assets/flowers/allium.jpg");
+const alstromeria = new Card(
+    "alstromeria",
+    "./src/assets/flowers/alstromeria.jpg"
+);
+const aster = new Card("aster", "./src/assets/flowers/aster.jpg");
+const azalea = new Card("azalea", "./src/assets/flowers/azalea.jpg");
+const carnation = new Card("carnation", "./src/assets/flowers/carnation.jpg");
+const daffodil = new Card("daffodil", "./src/assets/flowers/daffodil.jpg");
+const daisy = new Card("daisy", "./src/assets/flowers/daisy.jpg");
+const gardenia = new Card("gardenia", "./src/assets/flowers/gardenia.jpg");
+const iris = new Card("iris", "./src/assets/flowers/iris.jpg");
+const jasmine = new Card("jasmine", "./src/assets/flowers/jasmine.jpg");
+const lavender = new Card("lavender", "./src/assets/flowers/lavender.jpg");
+const lily = new Card("lily", "./src/assets/flowers/lily.jpg");
+const marigold = new Card("marigold", "./src/assets/flowers/marigold.jpg");
+const orchid = new Card("orchid", "./src/assets/flowers/orchid.jpg");
+const peony = new Card("peony", "./src/assets/flowers/peony.jpg");
+const poppy = new Card("poppy", "./src/assets/flowers/poppy.jpg");
+const rose = new Card("rose", "./src/assets/flowers/rose.jpg");
+const snapdragon = new Card(
+    "snapdragon",
+    "./src/assets/flowers/snapdragon.jpg"
+);
+const sunflower = new Card("sunflower", "./src/assets/flowers/sunflower.jpg");
+const tulip = new Card("tulip", "./src/assets/flowers/tulip.jpg");
 
 const cards = [
     allium,
