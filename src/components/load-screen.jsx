@@ -11,8 +11,8 @@ function Loading({ load, changeScreen, returnData }) {
     useEffect(() => {
         async function handleLoading() {
             await sleep(1500); // Delay on purpose.
-            load().then((cards) => {
-                returnData(cards);
+            load().then((data) => {
+                returnData(data);
                 changeScreen("game");
             });
         }
