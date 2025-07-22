@@ -6,16 +6,35 @@ import "./App.css";
 
 function App() {
     const [currentScreen, setCurrentScreen] = useState("welcome"); // To keep track of which screen to render
-    const [cardsData, setCardsData] = useState({}); // To keep cards data
+    const [renderingData, setRenderingData] = useState({}); // To keep cards data
+
+    // To load both cards and background animations while on loading screen
+    async function LoadCardsAndBackground() {
+        const cardsPromise = loadCards();
+        const particlesPromise = new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src =
+                "https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js";
+            script.onload = () => resolve(window.tsParticles);
+            script.onerror = reject;
+            document.body.appendChild(script);
+        });
+
+        const [cards, particles] = await Promise.all([
+            cardsPromise,
+            particlesPromise,
+        ]);
+        return { cards, particles };
+    }
 
     if (currentScreen === "welcome")
         return <WelcomeScreen changeScreen={setCurrentScreen} />;
     else if (currentScreen === "loading")
         return (
             <Loading
-                load={loadCards}
+                load={LoadCardsAndBackground}
                 changeScreen={setCurrentScreen}
-                returnData={setCardsData}
+                returnData={setRenderingData}
             />
         );
 }
