@@ -77,7 +77,17 @@ async function loadCards(collection = getRandomElements(cards, 12)) {
             img.src = item.url;
 
             img.onload = () => {
-                item.img = img;
+                // Use canvas to convert it to dataURL
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0);
+
+                const dataURL = canvas.toDataURL("image/jpeg");
+                item.img = dataURL;
+
                 resolve(item);
             };
 
