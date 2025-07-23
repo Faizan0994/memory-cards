@@ -2,10 +2,11 @@ import { useState } from "react";
 import WelcomeScreen from "./components/welcome-screen";
 import Loading from "./components/load-screen";
 import loadCards from "./cards";
+import Game from "./components/game-screen";
 import "./App.css";
 
 function App() {
-    const [currentScreen, setCurrentScreen] = useState("welcome"); // To keep track of which screen to render
+    const [currentScreen, setCurrentScreen] = useState("loading"); // To keep track of which screen to render
     const [renderingData, setRenderingData] = useState({}); // To keep cards data
 
     // To load both cards and background animations while on loading screen
@@ -37,6 +38,8 @@ function App() {
                 returnData={setRenderingData}
             />
         );
+    else if (currentScreen === "game")
+        return <Game renderingData={renderingData} />;
 }
 
 export default App;
