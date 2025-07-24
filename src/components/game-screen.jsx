@@ -60,6 +60,7 @@ function Game({ renderingData, gameEnd }) {
                 color: "transparent",
             },
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     function incrementScore() {
