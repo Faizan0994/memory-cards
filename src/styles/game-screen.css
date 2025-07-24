@@ -101,4 +101,9 @@ h2 {
     header {
         height: 9vh;
     }
+
+    .card {
+        width: 12vw;
+        height: 20vw;
+    }
 }
