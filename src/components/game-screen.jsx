@@ -82,6 +82,7 @@ function Game({ renderingData, gameEnd }) {
                             number={isDesktop ? 8 : 4}
                             updateScore={incrementScore}
                             onLoss={handleLoss}
+                            currentScore={score}
                         />
                     </section>
                     <section className="scoreSection">
