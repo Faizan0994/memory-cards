@@ -35,6 +35,16 @@ header h1 {
     justify-items: center;
 }
 
+.desktopCardSection {
+    height: 60vh;
+    padding: 3vh 5vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
 .card {
     height: 27vh;
     width: 15vh;
@@ -73,4 +83,26 @@ img {
 
 h2 {
     font-size: 3.5vh;
+}
+
+@media screen and (min-width: 768px) {
+    .cardSection {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        height: 70vh;
+        gap: 4vw;
+        padding: 4vh 12vw;
+    }
+
+    h2 {
+        font-size: 2.5vw;
+    }
+
+    header h1 {
+        font-size: 4vw;
+    }
+
+    header {
+        height: 9vh;
+    }
 }
