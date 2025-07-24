@@ -1,4 +1,4 @@
-function GameCards({ data, number, updateScore, onLoss }) {
+function GameCards({ data, number, updateScore, onLoss, currentScore }) {
     // To switch card positions
     function getRandomElements(array, count) {
         const shuffled = [...array];
@@ -14,7 +14,7 @@ function GameCards({ data, number, updateScore, onLoss }) {
     let cards = getRandomElements(data, number);
 
     // To make sure at least one card is still unclicked
-    while (cards.every((card) => card.clicked)) {
+    while (cards.every((card) => card.clicked) && currentScore < 12) {
         cards = getRandomElements(data, number);
     }
 
