@@ -1,0 +1,51 @@
+function GameCards({ data, number, updateScore, onLoss }) {
+    // To switch card positions
+    function getRandomElements(array, count) {
+        const shuffled = [...array];
+
+        // Using Fisher-Yates shuffle
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+
+        return shuffled.slice(0, count);
+    }
+    let cards = getRandomElements(data, number);
+
+    // To make sure at least one card is still unclicked
+    while (cards.every((card) => card.clicked)) {
+        cards = getRandomElements(data, number);
+    }
+
+    function handleClick(card) {
+        if (card.clicked) {
+            onLoss();
+        } else {
+            card.clicked = true;
+            console.log(card.name);
+            updateScore();
+        }
+    }
+
+    return (
+        <>
+            {cards.map((card) => {
+                return (
+                    <div
+                        className="card"
+                        onClick={() => handleClick(card)}
+                        key={card.name}
+                    >
+                        <img src={card.img} alt="" />
+                        <div className="textArea">
+                            <p>{card.name}</p>
+                        </div>
+                    </div>
+                );
+            })}
+        </>
+    );
+}
+
+export default GameCards;
