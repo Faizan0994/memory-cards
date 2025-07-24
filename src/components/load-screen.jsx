@@ -10,7 +10,7 @@ function Loading({ load, changeScreen, returnData }) {
 
     useEffect(() => {
         async function handleLoading() {
-            //await sleep(1500); // Delay on purpose.
+            await sleep(1000); // Delay on purpose.
             load().then((data) => {
                 const loaderContainer = document.querySelector(".loading");
                 loaderContainer.classList.add("fade");
