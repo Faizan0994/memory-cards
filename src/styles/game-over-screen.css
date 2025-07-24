@@ -34,6 +34,10 @@
     margin-top: 3vw;
 }
 
+.game-end-info button:hover {
+    background-color: #e85a5a;
+}
+
 @media screen and (orientation: landscape) {
     .game-end-info h1 {
         font-size: 4vw;

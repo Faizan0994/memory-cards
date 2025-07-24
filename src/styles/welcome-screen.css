@@ -42,6 +42,10 @@
     margin-top: 3vw;
 }
 
+.game-info button:hover {
+    background-color: #e85a5a;
+}
+
 @media screen and (orientation: landscape) {
     .welcome h1 {
         font-size: 4vw;
