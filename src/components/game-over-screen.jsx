@@ -1,3 +1,4 @@
+import { use, useEffect } from "react";
 import "../styles/game-over-screen.css";
 function GameOver({ data, changeScreen }) {
     const [winLose, score] = data;
@@ -11,6 +12,12 @@ function GameOver({ data, changeScreen }) {
     const restart = () => {
         changeScreen("loading");
     };
+
+    useEffect(() => {
+        setTimeout(() => {
+            document.querySelector(".game-over").classList.add("fade-in");
+        }, 0);
+    });
 
     return (
         <div className="game-over">
