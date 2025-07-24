@@ -66,6 +66,8 @@ function Game({ renderingData, gameEnd }) {
         setScore(score + 1);
     }
 
+    const isDesktop = window.innerWidth >= 768; // to use different number of cards for mobile and desktop
+
     return (
         <>
             <div id="particles"></div>
@@ -77,7 +79,7 @@ function Game({ renderingData, gameEnd }) {
                     <section className="cardSection">
                         <GameCards
                             data={cards}
-                            number={4}
+                            number={isDesktop ? 8 : 4}
                             updateScore={incrementScore}
                             onLoss={handleLoss}
                         />
