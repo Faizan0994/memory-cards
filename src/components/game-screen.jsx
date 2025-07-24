@@ -1,7 +1,23 @@
 import { useEffect } from "react";
+import { useState } from "react";
+import GameCards from "./game-cards";
 import "../styles/game-screen.css";
 
-function Game({ renderingData }) {
+function Game({ renderingData, gameEnd }) {
+    const [score, setScore] = useState(0);
+
+    const handleLoss = () => {
+        gameEnd("lose", score);
+    };
+
+    const handleWin = () => {
+        gameEnd("win", score);
+    };
+
+    if (score >= 12) {
+        handleWin();
+    }
+
     const cards = renderingData.cards;
     const particles = renderingData.particles;
 
@@ -46,6 +62,10 @@ function Game({ renderingData }) {
         });
     }, []);
 
+    function incrementScore() {
+        setScore(score + 1);
+    }
+
     return (
         <>
             <div id="particles"></div>
@@ -55,33 +75,15 @@ function Game({ renderingData }) {
                 </header>
                 <main>
                     <section className="cardSection">
-                        <div className="card">
-                            <img src={cards[0].img} alt="" />
-                            <div className="textArea">
-                                <p>{cards[0].name}</p>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <img src={cards[1].img} alt="" />
-                            <div className="textArea">
-                                <p>{cards[1].name}</p>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <img src={cards[2].img} alt="" />
-                            <div className="textArea">
-                                <p>{cards[2].name}</p>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <img src={cards[3].img} alt="" />
-                            <div className="textArea">
-                                <p>{cards[4].name}</p>
-                            </div>
-                        </div>
+                        <GameCards
+                            data={cards}
+                            number={4}
+                            updateScore={incrementScore}
+                            onLoss={handleLoss}
+                        />
                     </section>
                     <section className="scoreSection">
-                        <h2>Score: 0</h2>
+                        <h2>Score: {score}</h2>
                     </section>
                 </main>
             </div>
