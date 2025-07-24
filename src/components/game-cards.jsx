@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function GameCards({ data, number, updateScore, onLoss, currentScore }) {
     // To switch card positions
     function getRandomElements(array, count) {
@@ -19,13 +21,24 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
     }
 
     function handleClick(card) {
+        const cards = document.querySelectorAll(".front");
+        cards.forEach((card) => {
+            card.classList.remove("flip");
+        });
         if (card.clicked) {
             onLoss();
         } else {
             card.clicked = true;
-            updateScore();
+            setTimeout(() => {
+                updateScore();
+            }, 200);
         }
     }
+
+    useEffect(() => {
+        const cards = document.querySelectorAll(".front");
+        cards.forEach((card) => card.classList.add("flip"));
+    });
 
     return (
         <>
@@ -36,9 +49,12 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
                         onClick={() => handleClick(card)}
                         key={card.name}
                     >
-                        <img src={card.img} alt="" />
-                        <div className="textArea">
-                            <p>{card.name}</p>
+                        <div className="back"></div>
+                        <div className="front">
+                            <img src={card.img} alt="" />
+                            <div className="textArea">
+                                <p>{card.name}</p>
+                            </div>
                         </div>
                     </div>
                 );
