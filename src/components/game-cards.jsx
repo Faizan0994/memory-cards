@@ -29,7 +29,9 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
             onLoss();
         } else {
             card.clicked = true;
+            document.getElementById(card.name).classList.add("correct");
             setTimeout(() => {
+                document.getElementById(card.name).classList.remove("correct");
                 updateScore();
             }, 200);
         }
@@ -48,6 +50,7 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
                         className="card"
                         onClick={() => handleClick(card)}
                         key={card.name}
+                        id={card.name}
                     >
                         <div className="back"></div>
                         <div className="front">
