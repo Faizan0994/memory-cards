@@ -70,7 +70,6 @@ function Game({ renderingData, gameEnd }) {
 
     return (
         <>
-            <div id="particles"></div>
             <div className="game">
                 <header>
                     <h1>Memory Cards</h1>
