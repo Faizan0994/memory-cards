@@ -5,6 +5,12 @@
     justify-content: center;
     align-items: center;
     padding: 0;
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+.fade-in {
+    opacity: 1;
 }
 
 .game-end-info {
