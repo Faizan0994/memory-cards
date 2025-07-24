@@ -22,6 +22,7 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
 
     function handleClick(card) {
         const cards = document.querySelectorAll(".front");
+        const current = document.getElementById(card.name);
         cards.forEach((card) => {
             card.classList.remove("flip");
         });
@@ -29,9 +30,9 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
             onLoss();
         } else {
             card.clicked = true;
-            document.getElementById(card.name).classList.add("correct");
+            current.classList.add("correct");
             setTimeout(() => {
-                document.getElementById(card.name).classList.remove("correct");
+                current.classList.remove("correct");
                 updateScore();
             }, 200);
         }
