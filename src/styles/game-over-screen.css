@@ -1,0 +1,35 @@
+.game-over {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.game-end-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    font-size: 6vw;
+    justify-content: center;
+    align-items: center;
+    color: #333333;
+}
+
+.game-end-info h1 {
+    font-size: 10vw;
+    font-weight: 700;
+}
+
+.game-end-info button {
+    border-radius: 7vw;
+    border: none;
+    width: 30vw;
+    height: 13vw;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 5vw;
+    font-weight: 500;
+    margin-top: 3vw;
+}
