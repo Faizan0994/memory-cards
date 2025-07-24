@@ -44,6 +44,8 @@ header h1 {
     overflow: hidden;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease;
+    cursor: pointer;
+    user-select: none;
 }
 
 .card:hover {
@@ -103,7 +105,7 @@ h2 {
     }
 
     .card {
-        width: 12vw;
-        height: 20vw;
+        width: 18vh;
+        height: 32vh;
     }
 }
