@@ -3,11 +3,13 @@ import WelcomeScreen from "./components/welcome-screen";
 import Loading from "./components/load-screen";
 import loadCards from "./cards";
 import Game from "./components/game-screen";
+import GameOver from "./components/game-over-screen";
 import "./App.css";
 
 function App() {
     const [currentScreen, setCurrentScreen] = useState("loading"); // To keep track of which screen to render
     const [renderingData, setRenderingData] = useState({}); // To keep cards data
+    const [endingData, setEndingData] = useState(["lose", 0]);
 
     // To load both cards and background animations while on loading screen
     async function LoadCardsAndBackground() {
@@ -28,6 +30,11 @@ function App() {
         return { cards, particles };
     }
 
+    function handleGameEnd(winLose, score) {
+        setEndingData([winLose, score]);
+        setCurrentScreen("gameOver");
+    }
+
     if (currentScreen === "welcome")
         return <WelcomeScreen changeScreen={setCurrentScreen} />;
     else if (currentScreen === "loading")
@@ -39,7 +46,9 @@ function App() {
             />
         );
     else if (currentScreen === "game")
-        return <Game renderingData={renderingData} />;
+        return <Game renderingData={renderingData} gameEnd={handleGameEnd} />;
+    else if (currentScreen === "gameOver")
+        return <GameOver data={endingData} changeScreen={setCurrentScreen} />;
 }
 
 export default App;
