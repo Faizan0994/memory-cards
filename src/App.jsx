@@ -7,7 +7,7 @@ import GameOver from "./components/game-over-screen";
 import "./App.css";
 
 function App() {
-    const [currentScreen, setCurrentScreen] = useState("loading"); // To keep track of which screen to render
+    const [currentScreen, setCurrentScreen] = useState("welcome"); // To keep track of which screen to render
     const [renderingData, setRenderingData] = useState({}); // To keep cards data
     const [endingData, setEndingData] = useState(["lose", 0]);
 
