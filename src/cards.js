@@ -21,57 +21,66 @@ function getRandomElements(array, count) {
     return shuffled.slice(0, count);
 }
 
-const allium = new Card("allium", "./src/assets/flowers/allium.jpg");
-const alstromeria = new Card(
-    "alstromeria",
-    "./src/assets/flowers/alstromeria.jpg"
-);
-const aster = new Card("aster", "./src/assets/flowers/aster.jpg");
-const azalea = new Card("azalea", "./src/assets/flowers/azalea.jpg");
-const carnation = new Card("carnation", "./src/assets/flowers/carnation.jpg");
-const daffodil = new Card("daffodil", "./src/assets/flowers/daffodil.jpg");
-const daisy = new Card("daisy", "./src/assets/flowers/daisy.jpg");
-const gardenia = new Card("gardenia", "./src/assets/flowers/gardenia.jpg");
-const iris = new Card("iris", "./src/assets/flowers/iris.jpg");
-const jasmine = new Card("jasmine", "./src/assets/flowers/jasmine.jpg");
-const lavender = new Card("lavender", "./src/assets/flowers/lavender.jpg");
-const lily = new Card("lily", "./src/assets/flowers/lily.jpg");
-const marigold = new Card("marigold", "./src/assets/flowers/marigold.jpg");
-const orchid = new Card("orchid", "./src/assets/flowers/orchid.jpg");
-const peony = new Card("peony", "./src/assets/flowers/peony.jpg");
-const poppy = new Card("poppy", "./src/assets/flowers/poppy.jpg");
-const rose = new Card("rose", "./src/assets/flowers/rose.jpg");
-const snapdragon = new Card(
-    "snapdragon",
-    "./src/assets/flowers/snapdragon.jpg"
-);
-const sunflower = new Card("sunflower", "./src/assets/flowers/sunflower.jpg");
-const tulip = new Card("tulip", "./src/assets/flowers/tulip.jpg");
+function createCards() {
+    const allium = new Card("allium", "./src/assets/flowers/allium.jpg");
+    const alstromeria = new Card(
+        "alstromeria",
+        "./src/assets/flowers/alstromeria.jpg"
+    );
+    const aster = new Card("aster", "./src/assets/flowers/aster.jpg");
+    const azalea = new Card("azalea", "./src/assets/flowers/azalea.jpg");
+    const carnation = new Card(
+        "carnation",
+        "./src/assets/flowers/carnation.jpg"
+    );
+    const daffodil = new Card("daffodil", "./src/assets/flowers/daffodil.jpg");
+    const daisy = new Card("daisy", "./src/assets/flowers/daisy.jpg");
+    const gardenia = new Card("gardenia", "./src/assets/flowers/gardenia.jpg");
+    const iris = new Card("iris", "./src/assets/flowers/iris.jpg");
+    const jasmine = new Card("jasmine", "./src/assets/flowers/jasmine.jpg");
+    const lavender = new Card("lavender", "./src/assets/flowers/lavender.jpg");
+    const lily = new Card("lily", "./src/assets/flowers/lily.jpg");
+    const marigold = new Card("marigold", "./src/assets/flowers/marigold.jpg");
+    const orchid = new Card("orchid", "./src/assets/flowers/orchid.jpg");
+    const peony = new Card("peony", "./src/assets/flowers/peony.jpg");
+    const poppy = new Card("poppy", "./src/assets/flowers/poppy.jpg");
+    const rose = new Card("rose", "./src/assets/flowers/rose.jpg");
+    const snapdragon = new Card(
+        "snapdragon",
+        "./src/assets/flowers/snapdragon.jpg"
+    );
+    const sunflower = new Card(
+        "sunflower",
+        "./src/assets/flowers/sunflower.jpg"
+    );
+    const tulip = new Card("tulip", "./src/assets/flowers/tulip.jpg");
 
-const cards = [
-    allium,
-    alstromeria,
-    aster,
-    azalea,
-    carnation,
-    daffodil,
-    daisy,
-    gardenia,
-    iris,
-    jasmine,
-    lavender,
-    lily,
-    marigold,
-    orchid,
-    peony,
-    poppy,
-    rose,
-    snapdragon,
-    sunflower,
-    tulip,
-];
+    const cards = [
+        allium,
+        alstromeria,
+        aster,
+        azalea,
+        carnation,
+        daffodil,
+        daisy,
+        gardenia,
+        iris,
+        jasmine,
+        lavender,
+        lily,
+        marigold,
+        orchid,
+        peony,
+        poppy,
+        rose,
+        snapdragon,
+        sunflower,
+        tulip,
+    ];
+    return cards;
+}
 
-async function loadCards(collection = getRandomElements(cards, 12)) {
+async function loadCards(collection = getRandomElements(createCards(), 12)) {
     const loadCard = (item) => {
         return new Promise((resolve) => {
             const img = new Image();
