@@ -23,7 +23,6 @@ function GameCards({ data, number, updateScore, onLoss }) {
             onLoss();
         } else {
             card.clicked = true;
-            console.log(card.name);
             updateScore();
         }
     }
