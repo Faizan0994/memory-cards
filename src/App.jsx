@@ -60,8 +60,8 @@ function App() {
     }
     return (
         <>
+            <audio src={softPiano} loop ref={bgmRef} preload="auto"></audio>
             {loader()}
-            <audio src={softPiano} loop ref={bgmRef}></audio>
         </>
     );
 }
