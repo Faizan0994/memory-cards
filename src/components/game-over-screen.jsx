@@ -3,6 +3,8 @@ import "../styles/game-over-screen.css";
 function GameOver({ data, changeScreen }) {
     const [winLose, score] = data;
     const clickRef = useRef(null);
+    const winRef = useRef(null);
+    const loseRef = useRef(null);
 
     function gameOverMessage() {
         if (winLose === "lose") return "Game Over";
@@ -18,6 +20,17 @@ function GameOver({ data, changeScreen }) {
     };
 
     useEffect(() => {
+        if (winLose === "lose") {
+            if (loseRef) {
+                loseRef.current.volume = 0.5;
+                loseRef.current.play();
+            }
+        } else if (winLose === "win") {
+            if (winRef) {
+                winRef.current.volume = 0.5;
+                winRef.current.play();
+            }
+        }
         setTimeout(() => {
             document.querySelector(".game-over").classList.add("fade-in");
         }, 0);
@@ -26,6 +39,8 @@ function GameOver({ data, changeScreen }) {
     return (
         <div className="game-over">
             <audio src="./src/assets/click.wav" ref={clickRef}></audio>
+            <audio src="./src/assets/sparkle.wav" ref={winRef}></audio>
+            <audio src="./src/assets/beep.wav" ref={loseRef}></audio>
             <div className="game-end-info">
                 <h1>{gameOverMessage()}</h1>
                 <p>Score: {score}</p>
