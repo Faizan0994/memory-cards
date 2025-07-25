@@ -38,7 +38,11 @@ function GameOver({ data, changeScreen }) {
 
     return (
         <div className="game-over">
-            <audio src="./src/assets/click.wav" ref={clickRef}></audio>
+            <audio
+                src="./src/assets/click.wav"
+                ref={clickRef}
+                volume="0.5"
+            ></audio>
             <audio src="./src/assets/sparkle.wav" ref={winRef}></audio>
             <audio src="./src/assets/beep.wav" ref={loseRef}></audio>
             <div className="game-end-info">

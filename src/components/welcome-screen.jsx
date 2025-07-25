@@ -15,7 +15,11 @@ function WelcomeScreen({ changeScreen }) {
     };
     return (
         <div className="welcome">
-            <audio src="./src/assets/click.wav" ref={clickRef}></audio>
+            <audio
+                src="./src/assets/click.wav"
+                ref={clickRef}
+                volume="0.5"
+            ></audio>
             <section className="game-info">
                 <h1>Memory Cards Game</h1>
                 <p>
