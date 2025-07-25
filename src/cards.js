@@ -43,26 +43,26 @@ function getRandomElements(array, count) {
 }
 
 function createCards() {
-    const allium = new Card("allium", alliumURL);
-    const alstromeria = new Card("alstromeria", alstromeriaURL);
-    const aster = new Card("aster", asterURL);
-    const azalea = new Card("azalea", azaleaURL);
-    const carnation = new Card("carnation", carnationURL);
-    const daffodil = new Card("daffodil", daffodilURL);
-    const daisy = new Card("daisy", daisyURL);
-    const gardenia = new Card("gardenia", gardeniaURL);
-    const iris = new Card("iris", irisURL);
-    const jasmine = new Card("jasmine", jasmineURL);
-    const lavender = new Card("lavender", lavenderURL);
-    const lily = new Card("lily", lilyURL);
-    const marigold = new Card("marigold", marigoldURL);
-    const orchid = new Card("orchid", orchidURL);
-    const peony = new Card("peony", peonyURL);
-    const poppy = new Card("poppy", poppyURL);
-    const rose = new Card("rose", roseURL);
-    const snapdragon = new Card("snapdragon", snapdragonURL);
-    const sunflower = new Card("sunflower", sunflowerURL);
-    const tulip = new Card("tulip", tulipURL);
+    const allium = new Card("Allium", alliumURL);
+    const alstromeria = new Card("Alstromeria", alstromeriaURL);
+    const aster = new Card("Aster", asterURL);
+    const azalea = new Card("Azalea", azaleaURL);
+    const carnation = new Card("Carnation", carnationURL);
+    const daffodil = new Card("Daffodil", daffodilURL);
+    const daisy = new Card("Daisy", daisyURL);
+    const gardenia = new Card("Gardenia", gardeniaURL);
+    const iris = new Card("Iris", irisURL);
+    const jasmine = new Card("Jasmine", jasmineURL);
+    const lavender = new Card("Lavender", lavenderURL);
+    const lily = new Card("Lily", lilyURL);
+    const marigold = new Card("Marigold", marigoldURL);
+    const orchid = new Card("Orchid", orchidURL);
+    const peony = new Card("Peony", peonyURL);
+    const poppy = new Card("Poppy", poppyURL);
+    const rose = new Card("Rose", roseURL);
+    const snapdragon = new Card("Snapdragon", snapdragonURL);
+    const sunflower = new Card("Sunflower", sunflowerURL);
+    const tulip = new Card("Tulip", tulipURL);
 
     const cards = [
         allium,
