@@ -93,6 +93,7 @@ async function loadCards(collection = getRandomElements(createCards(), 12)) {
     const loadCard = (item) => {
         return new Promise((resolve) => {
             const img = new Image();
+            img.crossOrigin = "anonymous";
             img.src = item.url;
 
             img.onload = () => {
