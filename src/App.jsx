@@ -37,8 +37,6 @@ function App() {
         setCurrentScreen("gameOver");
     }
 
-    useEffect(() => {});
-
     function loader() {
         if (currentScreen === "welcome")
             return <WelcomeScreen changeScreen={setCurrentScreen} />;
