@@ -1,6 +1,6 @@
 import "../styles/welcome-screen.css";
 import { useRef } from "react";
-import click from "../assets/click.wav";
+import click from "../assets/click.mp3";
 
 // Display's game title, info and play button
 function WelcomeScreen({ changeScreen }) {

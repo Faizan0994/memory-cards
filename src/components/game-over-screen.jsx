@@ -1,8 +1,8 @@
 import { useRef, useEffect } from "react";
 import "../styles/game-over-screen.css";
-import clickSound from "../assets/click.wav";
-import winSound from "../assets/sparkle.wav";
-import loseSound from "../assets/beep.wav";
+import clickSound from "../assets/click.mp3";
+import winSound from "../assets/sparkle.mp3";
+import loseSound from "../assets/beep.mp3";
 
 function GameOver({ data, changeScreen }) {
     const [winLose, score] = data;

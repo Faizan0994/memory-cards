@@ -4,7 +4,7 @@ import Loading from "./components/load-screen";
 import loadCards from "./cards";
 import Game from "./components/game-screen";
 import GameOver from "./components/game-over-screen";
-import softPiano from "./assets/soft-piano.wav";
+import softPiano from "./assets/soft-piano.mp3";
 import "./App.css";
 
 function App() {
