@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import WelcomeScreen from "./components/welcome-screen";
 import Loading from "./components/load-screen";
 import loadCards from "./cards";
