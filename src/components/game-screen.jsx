@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import GameCards from "./game-cards";
+import leaf from "../assets/leaf.svg";
 import "../styles/game-screen.css";
 
 function Game({ renderingData, gameEnd }) {
@@ -33,7 +34,7 @@ function Game({ renderingData, gameEnd }) {
                 shape: {
                     type: "image",
                     image: {
-                        src: "./src/assets/leaf.svg",
+                        src: leaf,
                         width: 32,
                         height: 32,
                     },

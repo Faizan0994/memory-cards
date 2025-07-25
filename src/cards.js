@@ -1,5 +1,26 @@
 // This file contains all the code for loading card objects with their respective names and images
 
+import alliumURL from "./assets/flowers/allium.jpg";
+import alstromeriaURL from "./assets/flowers/alstromeria.jpg";
+import asterURL from "./assets/flowers/aster.jpg";
+import azaleaURL from "./assets/flowers/azalea.jpg";
+import carnationURL from "./assets/flowers/carnation.jpg";
+import daffodilURL from "./assets/flowers/daffodil.jpg";
+import daisyURL from "./assets/flowers/daisy.jpg";
+import gardeniaURL from "./assets/flowers/gardenia.jpg";
+import irisURL from "./assets/flowers/iris.jpg";
+import jasmineURL from "./assets/flowers/jasmine.jpg";
+import lavenderURL from "./assets/flowers/lavender.jpg";
+import lilyURL from "./assets/flowers/lily.jpg";
+import marigoldURL from "./assets/flowers/marigold.jpg";
+import orchidURL from "./assets/flowers/orchid.jpg";
+import peonyURL from "./assets/flowers/peony.jpg";
+import poppyURL from "./assets/flowers/poppy.jpg";
+import roseURL from "./assets/flowers/rose.jpg";
+import snapdragonURL from "./assets/flowers/snapdragon.jpg";
+import sunflowerURL from "./assets/flowers/sunflower.jpg";
+import tulipURL from "./assets/flowers/tulip.jpg";
+
 class Card {
     constructor(name, url) {
         this.name = name;
@@ -22,38 +43,26 @@ function getRandomElements(array, count) {
 }
 
 function createCards() {
-    const allium = new Card("allium", "./src/assets/flowers/allium.jpg");
-    const alstromeria = new Card(
-        "alstromeria",
-        "./src/assets/flowers/alstromeria.jpg"
-    );
-    const aster = new Card("aster", "./src/assets/flowers/aster.jpg");
-    const azalea = new Card("azalea", "./src/assets/flowers/azalea.jpg");
-    const carnation = new Card(
-        "carnation",
-        "./src/assets/flowers/carnation.jpg"
-    );
-    const daffodil = new Card("daffodil", "./src/assets/flowers/daffodil.jpg");
-    const daisy = new Card("daisy", "./src/assets/flowers/daisy.jpg");
-    const gardenia = new Card("gardenia", "./src/assets/flowers/gardenia.jpg");
-    const iris = new Card("iris", "./src/assets/flowers/iris.jpg");
-    const jasmine = new Card("jasmine", "./src/assets/flowers/jasmine.jpg");
-    const lavender = new Card("lavender", "./src/assets/flowers/lavender.jpg");
-    const lily = new Card("lily", "./src/assets/flowers/lily.jpg");
-    const marigold = new Card("marigold", "./src/assets/flowers/marigold.jpg");
-    const orchid = new Card("orchid", "./src/assets/flowers/orchid.jpg");
-    const peony = new Card("peony", "./src/assets/flowers/peony.jpg");
-    const poppy = new Card("poppy", "./src/assets/flowers/poppy.jpg");
-    const rose = new Card("rose", "./src/assets/flowers/rose.jpg");
-    const snapdragon = new Card(
-        "snapdragon",
-        "./src/assets/flowers/snapdragon.jpg"
-    );
-    const sunflower = new Card(
-        "sunflower",
-        "./src/assets/flowers/sunflower.jpg"
-    );
-    const tulip = new Card("tulip", "./src/assets/flowers/tulip.jpg");
+    const allium = new Card("allium", alliumURL);
+    const alstromeria = new Card("alstromeria", alstromeriaURL);
+    const aster = new Card("aster", asterURL);
+    const azalea = new Card("azalea", azaleaURL);
+    const carnation = new Card("carnation", carnationURL);
+    const daffodil = new Card("daffodil", daffodilURL);
+    const daisy = new Card("daisy", daisyURL);
+    const gardenia = new Card("gardenia", gardeniaURL);
+    const iris = new Card("iris", irisURL);
+    const jasmine = new Card("jasmine", jasmineURL);
+    const lavender = new Card("lavender", lavenderURL);
+    const lily = new Card("lily", lilyURL);
+    const marigold = new Card("marigold", marigoldURL);
+    const orchid = new Card("orchid", orchidURL);
+    const peony = new Card("peony", peonyURL);
+    const poppy = new Card("poppy", poppyURL);
+    const rose = new Card("rose", roseURL);
+    const snapdragon = new Card("snapdragon", snapdragonURL);
+    const sunflower = new Card("sunflower", sunflowerURL);
+    const tulip = new Card("tulip", tulipURL);
 
     const cards = [
         allium,

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import flip from "../assets/flip.wav";
 
 function GameCards({ data, number, updateScore, onLoss, currentScore }) {
     const flipSound = useRef(null); // For card flip sound
@@ -55,7 +56,7 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
 
     return (
         <>
-            <audio src="./src/assets/flip.wav" ref={flipSound}></audio>
+            <audio src={flip} ref={flipSound}></audio>
             {cards.map((card) => {
                 return (
                     <div

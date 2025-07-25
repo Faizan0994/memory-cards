@@ -1,5 +1,6 @@
 import "../styles/welcome-screen.css";
 import { useRef } from "react";
+import click from "../assets/click.wav";
 
 // Display's game title, info and play button
 function WelcomeScreen({ changeScreen }) {
@@ -15,11 +16,7 @@ function WelcomeScreen({ changeScreen }) {
     };
     return (
         <div className="welcome">
-            <audio
-                src="./src/assets/click.wav"
-                ref={clickRef}
-                volume="0.5"
-            ></audio>
+            <audio src={click} ref={clickRef} volume="0.5"></audio>
             <section className="game-info">
                 <h1>Memory Cards Game</h1>
                 <p>

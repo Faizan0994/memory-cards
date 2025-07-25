@@ -1,5 +1,9 @@
 import { useRef, useEffect } from "react";
 import "../styles/game-over-screen.css";
+import clickSound from "../assets/click.wav";
+import winSound from "../assets/sparkle.wav";
+import loseSound from "../assets/beep.wav";
+
 function GameOver({ data, changeScreen }) {
     const [winLose, score] = data;
     const clickRef = useRef(null);
@@ -38,13 +42,9 @@ function GameOver({ data, changeScreen }) {
 
     return (
         <div className="game-over">
-            <audio
-                src="./src/assets/click.wav"
-                ref={clickRef}
-                volume="0.5"
-            ></audio>
-            <audio src="./src/assets/sparkle.wav" ref={winRef}></audio>
-            <audio src="./src/assets/beep.wav" ref={loseRef}></audio>
+            <audio src={clickSound} ref={clickRef} volume="0.5"></audio>
+            <audio src={winSound} ref={winRef}></audio>
+            <audio src={loseSound} ref={loseRef}></audio>
             <div className="game-end-info">
                 <h1>{gameOverMessage()}</h1>
                 <p>Score: {score}</p>
