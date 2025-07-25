@@ -1,8 +1,11 @@
 import "../styles/welcome-screen.css";
+import { useRef } from "react";
 
 // Display's game title, info and play button
 function WelcomeScreen({ changeScreen }) {
+    const clickRef = useRef(null);
     const setLoadingScreen = () => {
+        if (clickRef) clickRef.current.play();
         document.querySelector(".welcome").classList.add("fade"); // add fading effect to transition to loading screen
         document
             .querySelector(".welcome")
@@ -12,6 +15,7 @@ function WelcomeScreen({ changeScreen }) {
     };
     return (
         <div className="welcome">
+            <audio src="./src/assets/click.wav" ref={clickRef}></audio>
             <section className="game-info">
                 <h1>Memory Cards Game</h1>
                 <p>

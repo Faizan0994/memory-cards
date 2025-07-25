@@ -1,7 +1,8 @@
-import { use, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import "../styles/game-over-screen.css";
 function GameOver({ data, changeScreen }) {
     const [winLose, score] = data;
+    const clickRef = useRef(null);
 
     function gameOverMessage() {
         if (winLose === "lose") return "Game Over";
@@ -10,7 +11,10 @@ function GameOver({ data, changeScreen }) {
     }
 
     const restart = () => {
-        changeScreen("loading");
+        if (clickRef) clickRef.current.play();
+        setTimeout(() => {
+            changeScreen("loading");
+        }, 200);
     };
 
     useEffect(() => {
@@ -21,6 +25,7 @@ function GameOver({ data, changeScreen }) {
 
     return (
         <div className="game-over">
+            <audio src="./src/assets/click.wav" ref={clickRef}></audio>
             <div className="game-end-info">
                 <h1>{gameOverMessage()}</h1>
                 <p>Score: {score}</p>
