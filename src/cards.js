@@ -106,6 +106,7 @@ async function loadCards(collection = getRandomElements(createCards(), 12)) {
                 ctx.drawImage(img, 0, 0);
 
                 const dataURL = canvas.toDataURL("image/jpeg");
+                console.log(dataURL);
                 item.img = dataURL;
 
                 resolve(item);
