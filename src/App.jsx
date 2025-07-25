@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import WelcomeScreen from "./components/welcome-screen";
 import Loading from "./components/load-screen";
 import loadCards from "./cards";
@@ -10,6 +10,7 @@ function App() {
     const [currentScreen, setCurrentScreen] = useState("welcome"); // To keep track of which screen to render
     const [renderingData, setRenderingData] = useState({}); // To keep cards data
     const [endingData, setEndingData] = useState(["lose", 0]);
+    const bgmRef = useRef(null); // For background music
 
     // To load both cards and background animations while on loading screen
     async function LoadCardsAndBackground() {
@@ -27,6 +28,7 @@ function App() {
             cardsPromise,
             particlesPromise,
         ]);
+        if (bgmRef) bgmRef.current.play();
         return { cards, particles };
     }
 
@@ -35,20 +37,34 @@ function App() {
         setCurrentScreen("gameOver");
     }
 
-    if (currentScreen === "welcome")
-        return <WelcomeScreen changeScreen={setCurrentScreen} />;
-    else if (currentScreen === "loading")
-        return (
-            <Loading
-                load={LoadCardsAndBackground}
-                changeScreen={setCurrentScreen}
-                returnData={setRenderingData}
-            />
-        );
-    else if (currentScreen === "game")
-        return <Game renderingData={renderingData} gameEnd={handleGameEnd} />;
-    else if (currentScreen === "gameOver")
-        return <GameOver data={endingData} changeScreen={setCurrentScreen} />;
+    useEffect(() => {});
+
+    function loader() {
+        if (currentScreen === "welcome")
+            return <WelcomeScreen changeScreen={setCurrentScreen} />;
+        else if (currentScreen === "loading")
+            return (
+                <Loading
+                    load={LoadCardsAndBackground}
+                    changeScreen={setCurrentScreen}
+                    returnData={setRenderingData}
+                />
+            );
+        else if (currentScreen === "game")
+            return (
+                <Game renderingData={renderingData} gameEnd={handleGameEnd} />
+            );
+        else if (currentScreen === "gameOver")
+            return (
+                <GameOver data={endingData} changeScreen={setCurrentScreen} />
+            );
+    }
+    return (
+        <>
+            {loader()}
+            <audio src="./src/assets/soft-piano.wav" loop ref={bgmRef}></audio>
+        </>
+    );
 }
 
 export default App;
