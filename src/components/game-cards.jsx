@@ -32,7 +32,7 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
             onLoss();
         } else {
             if (flipSound) {
-                flipSound.current.volume = 0.5;
+                flipSound.current.volume = 0.2;
                 flipSound.current.play();
             }
             card.clicked = true;
