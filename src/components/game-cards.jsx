@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function GameCards({ data, number, updateScore, onLoss, currentScore }) {
+    const flipSound = useRef(null); // For card flip sound
+
     // To switch card positions
     function getRandomElements(array, count) {
         const shuffled = [...array];
@@ -29,6 +31,10 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
         if (card.clicked) {
             onLoss();
         } else {
+            if (flipSound) {
+                flipSound.current.volume = 0.5;
+                flipSound.current.play();
+            }
             card.clicked = true;
             current.classList.add("correct");
             setTimeout(() => {
@@ -41,10 +47,15 @@ function GameCards({ data, number, updateScore, onLoss, currentScore }) {
     useEffect(() => {
         const cards = document.querySelectorAll(".front");
         cards.forEach((card) => card.classList.add("flip"));
+        if (flipSound) {
+            flipSound.current.volume = 0.5;
+            flipSound.current.play();
+        }
     });
 
     return (
         <>
+            <audio src="./src/assets/flip.wav" ref={flipSound}></audio>
             {cards.map((card) => {
                 return (
                     <div
